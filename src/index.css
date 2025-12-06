@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #B2DAEF;
+  font-family: 'Retro', sans-serif;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+@font-face {
+    font-family: 'retro';
+    src: url('/retro.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'neuebit';
+  src: url('/neuebit.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('/VT323-Regular.woff') format('woff');
+}
+
+
+.poppins {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-italic {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+.retro {
+    font-family: 'Retro', sans-serif;
+}
+
+.neuebit {
+  font-family: 'neuebit', sans-serif;
+  font-size: x-large;
+}
+
+.code {
+  font-family: 'VT323';
+  font-size: large;
+}
+
+.neuebit-body {
+  font-family: 'neuebit', sans-serif;
+  font-size: xx-large;
+}
+
+a {
+  color: lightpink;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+}
+
+@keyframes bobble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bobble {
+  animation: bobble 1.5s infinite ease-in-out;
+}

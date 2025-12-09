@@ -147,13 +147,13 @@ const handleMove = (e) => {
       <div
         style={{
           position: "absolute",
-          bottom: "-100px",
+          bottom: "-500px",
           left: "250px",
           transform: `translateZ(200px)`,
           zIndex: 500,
           display: "flex",
-          flexDirection: "row",
-          alignItems: "flex-end",
+          flexDirection: "column",
+          alignItems: "flex-left",
           gap: "40px",
         }}
       >
@@ -168,13 +168,9 @@ const handleMove = (e) => {
         />
         <div className="overflow-hidden w-full py-10 max-w-5xl">
           <div className="flex flex-wrap justify-center gap-8 mx-5">
+            <p>How it works</p>
             <div
               className="bg-blue-200 text-center rounded-xl"
-              style={{
-                backgroundColor: "#bfdbfe",
-                borderRadius: "16px",
-                padding: "16px",
-              }}
             >
               <p>1. draw and design your character + backgrounds!</p>
             </div>

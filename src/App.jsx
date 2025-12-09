@@ -11,26 +11,22 @@ const layers = [
 ];
 
 export default function App() {
-  useEffect(() => {
-    const handleMove = (e) => {
-      const trail = document.createElement("div");
-      trail.className = "cursor-trail";
-      trail.style.left = e.clientX + "px";
-      trail.style.top = e.clientY + "px";
+let last = 0;
 
-      document.body.appendChild(trail);
+const handleMove = (e) => {
+  const now = performance.now();
+  if (now - last < 30) return;
+  last = now;
 
-      setTimeout(() => {
-        trail.remove();
-      }, 600);
-    };
+  const trail = document.createElement("div");
+  trail.className = "cursor-trail";
+  trail.style.left = e.clientX + "px";
+  trail.style.top = e.clientY + "px";
 
-    window.addEventListener("mousemove", handleMove);
+  document.body.appendChild(trail);
+  setTimeout(() => trail.remove(), 300);
+};
 
-    return () => {
-      window.removeEventListener("mousemove", handleMove);
-    };
-  }, []);
 
   const containerStyle = {
     perspective: "1000px",
@@ -91,7 +87,7 @@ export default function App() {
         <div
           style={{
             ...layerBase,
-            transform: "translateZ(0px) translateY(100px) scale(2)",
+            transform: "translateZ(0px) translateY(100px) scale(3)",
             backgroundColor: "#24023F",
             top: "100%",
             height: "150vh",

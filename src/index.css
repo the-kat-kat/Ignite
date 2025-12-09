@@ -2,28 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+    font-family: 'hug';
+    font-size: large;
+    src: url('./Karina.ttf') format('truetype');
+}
+
+
 body {
-  background-color: #B2DAEF;
-  font-family: 'Retro', sans-serif;
-}
-
-img {
-    image-rendering: pixelated;
-}
-
-@font-face {
-    font-family: 'retro';
-    src: url('/retro.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'neuebit';
-  src: url('/neuebit.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'VT323';
-  src: url('/VT323-Regular.woff') format('woff');
+  background-color: #6EBBFF;
+  font-family: 'hug', sans-serif;
+  font-size: 24px;
+  color: white;
+  cursor: url('/spark1.png'), auto;
 }
 
 
@@ -71,24 +63,27 @@ img {
   font-size: xx-large;
 }
 
+a, 
+button,
+[role='button']
+{
+  cursor: url('/spark2.png'), pointer;
+}
+
 a {
   color: lightpink;
   text-decoration: underline;
+  cursor: url('/spark2.png'), pointer;
 }
 
 a:hover {
   color: white;
 }
 
-@keyframes bobble {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.computer-hover {
+  transition: transform 0.25s ease;
 }
 
-.bobble {
-  animation: bobble 1.5s infinite ease-in-out;
+.computer-hover:hover {
+  transform: scale(1.15);
 }

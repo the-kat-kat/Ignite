@@ -68,7 +68,7 @@ export default function App() {
   return (
     <div style={{ ...containerStyle }} className="w-full min-h-screen">
       <div style={groupStyle}>
-        {/* {layers.map((l, i) => (
+         {layers.map((l, i) => (
           <div
             key={i}
             style={{
@@ -99,7 +99,7 @@ export default function App() {
             zIndex: 0,
           }}
           
-        />*/}
+        />
       </div>
 
       {/* Title */}

@@ -2,22 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@font-face {
-    font-family: 'hug';
-    font-size: large;
-    src: url('./Karina.ttf') format('truetype');
-}
-
+/**@font-face {
+  font-family: "hug";
+  src: url("./Karina.ttf") format("truetype");
+}*/
 
 body {
-  background-color: #6EBBFF;
-  font-family: 'hug', sans-serif;
+  font-family: "hug", sans-serif;
   font-size: 24px;
   color: white;
-  cursor: url('/spark1.png'), auto;
+  cursor: url("/spark1.png"), auto;
 }
-
 
 .poppins {
   font-family: "Poppins", serif;
@@ -43,37 +38,35 @@ body {
   font-style: italic;
 }
 
-
 .retro {
-    font-family: 'Retro', sans-serif;
+  font-family: "Retro", sans-serif;
 }
 
 .neuebit {
-  font-family: 'neuebit', sans-serif;
+  font-family: "neuebit", sans-serif;
   font-size: x-large;
 }
 
 .code {
-  font-family: 'VT323';
+  font-family: "VT323";
   font-size: large;
 }
 
 .neuebit-body {
-  font-family: 'neuebit', sans-serif;
+  font-family: "neuebit", sans-serif;
   font-size: xx-large;
 }
 
-a, 
+a,
 button,
-[role='button']
-{
-  cursor: url('/spark2.png'), pointer;
+[role="button"] {
+  cursor: url("/spark2.png"), pointer;
 }
 
 a {
-  color: lightpink;
+  color: #bfdbfe;
   text-decoration: underline;
-  cursor: url('/spark2.png'), pointer;
+  cursor: url("/spark2.png"), pointer;
 }
 
 a:hover {
@@ -86,4 +79,25 @@ a:hover {
 
 .computer-hover:hover {
   transform: scale(1.15);
+}
+
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  background-image: url("/spark1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+  /** transform: translate(-70%, -70%);*/
+  animation: fadeOut 1.5s forwards;
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
 }

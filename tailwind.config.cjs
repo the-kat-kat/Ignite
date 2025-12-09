@@ -1,6 +1,4 @@
-
 /** @type {import('tailwindcss').Config} */
-
 
 export default {
   content: [
@@ -18,6 +16,4 @@ export default {
       "slate":"#94a3b8",
     },
   },
-  plugins: [
-  ],
 }

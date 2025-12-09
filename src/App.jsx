@@ -1,16 +1,37 @@
 import { useState, useEffect } from "react";
 //import Toolbar from "./components/Toolbar.jsx";
 import "./App.css";
-//import EmailButton from "./components/EmailButton.jsx";
+import EmailButton from "./components/EmailButton.jsx";
 
 import { Outlet, Link } from "react-router-dom";
 
 const layers = [
   { src: "./ignite_1.png", z: -1000, opacity: 1 },
-  { src: "./ignite_2.png", z: 0, opacity: 1 },
+  { src: "./ignite_2.png", z: 0, opacity: 0.4 },
 ];
 
 export default function App() {
+  useEffect(() => {
+    const handleMove = (e) => {
+      const trail = document.createElement("div");
+      trail.className = "cursor-trail";
+      trail.style.left = e.clientX + "px";
+      trail.style.top = e.clientY + "px";
+
+      document.body.appendChild(trail);
+
+      setTimeout(() => {
+        trail.remove();
+      }, 600);
+    };
+
+    window.addEventListener("mousemove", handleMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+    };
+  }, []);
+
   const containerStyle = {
     perspective: "1000px",
     perspectiveOrigin: "50% 50%",
@@ -47,13 +68,13 @@ export default function App() {
   return (
     <div style={{ ...containerStyle }} className="w-full min-h-screen">
       <div style={groupStyle}>
-        {layers.map((l, i) => (
+        {/* {layers.map((l, i) => (
           <div
             key={i}
             style={{
               ...layerBase,
               transform: `translateZ(${l.z}px) translateY(${
-                -((l.z - Math.min(...layers.map((l) => l.z))) / 80) * 2 - 300
+                -((l.z - Math.min(...layers.map((l) => l.z))) / 800) * 2 - 100
               }px) scale(${1.4 + Math.abs(l.z) / 800})`,
               zIndex: 10 + i,
               opacity: l.opacity,
@@ -70,14 +91,15 @@ export default function App() {
         <div
           style={{
             ...layerBase,
-            transform: "translateZ(0px) translateY(-100px) scale(2)",
+            transform: "translateZ(0px) translateY(100px) scale(2)",
             backgroundColor: "#24023F",
             top: "100%",
             height: "150vh",
             width: "100%",
             zIndex: 0,
           }}
-        />
+          
+        />*/}
       </div>
 
       {/* Title */}
@@ -85,8 +107,7 @@ export default function App() {
         style={{
           position: "absolute",
           bottom: "100px",
-          left: "220px",
-          transform: `translateZ(200px)`,
+          left: "100px",
           zIndex: 500,
           display: "flex",
           flexDirection: "row",
@@ -99,11 +120,23 @@ export default function App() {
             src="./ignite_text.png"
             alt="title"
             style={{ width: "500px", height: "auto" }}
+            className="computer-hover"
           />
 
           <h1 className="text-6xl font-extrabold text-white">
             Code for 10 hours, earn your own personal computer!
           </h1>
+
+          <div
+            className="relative mt-6 inline-block  -inset-8 rounded-[32px] bg-[#24023F] p-5"
+            style={{
+              backgroundColor: "#bfdbfe",
+              borderRadius: "16px",
+              padding: "16px",
+            }}
+          >
+            <EmailButton />
+          </div>
         </div>
 
         <img
@@ -128,9 +161,25 @@ export default function App() {
           gap: "40px",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            inset: "-40px",
+            backgroundColor: "#24023F",
+            borderRadius: "40px",
+            zIndex: -1,
+          }}
+        />
         <div className="overflow-hidden w-full py-10 max-w-5xl">
           <div className="flex flex-wrap justify-center gap-8 mx-5">
-            <div className="bg-blue-200 text-center rounded-xl">
+            <div
+              className="bg-blue-200 text-center rounded-xl"
+              style={{
+                backgroundColor: "#bfdbfe",
+                borderRadius: "16px",
+                padding: "16px",
+              }}
+            >
               <p>1. draw and design your character + backgrounds!</p>
             </div>
             <div className="bg-blue-200 p-5 max-w-sm text-center rounded-xl">
@@ -145,7 +194,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Top overlay */}
+      {/* HC on top */}
       <div
         style={{
           position: "fixed",
@@ -154,21 +203,26 @@ export default function App() {
           width: "100vw",
           height: "100vh",
           zIndex: 10,
+          pointerEvents: "none",
         }}
         className="min-h-screen flex flex-col items-center justify-center text-center px-4"
       >
         <a
           href="https://hackclub.com"
           target="_blank"
-          rel="noopenner noreferrer"
+          rel="noopener noreferrer"
+          className="absolute top-0 left-2"
         >
-          <img
+          {/*<img
             src="https://assets.hackclub.com/flag-orpheus-top.svg"
-            className="absolute top-0 left-2"
             alt="Hack Club"
-          />
+            style={{ pointerEvents: "auto" }}
+            className="computer-hover"
+          />*/}
         </a>
       </div>
+
+      <div className="bg-lightBlue text-white p-10 text-4xl">Tailwind test</div>
     </div>
   );
 }

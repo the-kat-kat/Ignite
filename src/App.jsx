@@ -11,22 +11,21 @@ const layers = [
 ];
 
 export default function App() {
-let last = 0;
+  let last = 0;
 
-const handleMove = (e) => {
-  const now = performance.now();
-  if (now - last < 30) return;
-  last = now;
+  const handleMove = (e) => {
+    const now = performance.now();
+    if (now - last < 30) return;
+    last = now;
 
-  const trail = document.createElement("div");
-  trail.className = "cursor-trail";
-  trail.style.left = e.clientX + "px";
-  trail.style.top = e.clientY + "px";
+    const trail = document.createElement("div");
+    trail.className = "cursor-trail";
+    trail.style.left = e.clientX + "px";
+    trail.style.top = e.clientY + "px";
 
-  document.body.appendChild(trail);
-  setTimeout(() => trail.remove(), 300);
-};
-
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 300);
+  };
 
   const containerStyle = {
     perspective: "1000px",
@@ -64,7 +63,7 @@ const handleMove = (e) => {
   return (
     <div style={{ ...containerStyle }} className="w-full min-h-screen">
       <div style={groupStyle}>
-         {layers.map((l, i) => (
+        {layers.map((l, i) => (
           <div
             key={i}
             style={{
@@ -94,7 +93,6 @@ const handleMove = (e) => {
             width: "100%",
             zIndex: 0,
           }}
-          
         />
       </div>
 
@@ -169,9 +167,7 @@ const handleMove = (e) => {
         <div className="overflow-hidden w-full py-10 max-w-5xl">
           <div className="flex flex-wrap justify-center gap-8 mx-5">
             <p>How it works</p>
-            <div
-              className="bg-blue-200 text-center rounded-xl"
-            >
+            <div className="bg-blue-200 text-center rounded-xl">
               <p>1. draw and design your character + backgrounds!</p>
             </div>
             <div className="bg-blue-200 p-5 max-w-sm text-center rounded-xl">
@@ -212,6 +208,12 @@ const handleMove = (e) => {
             className="computer-hover"
           />*/}
         </a>
+
+        <div className="min-h-screen flex items-center justify-center bg-black text-white">
+          <h1 className="text-5xl font-bold text-lightPink">
+            Tailwind is working ✅
+          </h1>
+        </div>
       </div>
 
       <div className="bg-lightBlue text-white p-10 text-4xl">Tailwind test</div>

@@ -60,7 +60,7 @@ const EmailSignup = () => {
         />
         <button
           type="submit"
-          className={`p-2 text-white rounded-md bg-blue-200 ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+          className={`p-2 text-white rounded-md bg-salmon ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Submitting...' : 'Join the Slack'}

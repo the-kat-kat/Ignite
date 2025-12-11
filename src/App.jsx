@@ -6,18 +6,26 @@ import EmailButton from "./components/EmailButton.jsx";
 import { Outlet, Link } from "react-router-dom";
 
 const layers = [
-  { src: "./ignite_1.png", z: -1000, opacity: 1 },
-  { src: "./ignite_2.png", z: -500, opacity: 0.8 },
+  { src: "./ignite_1.png", z: -1000, opacity: 0.5 },
+  { src: "./ignite_2.png", z: -500, opacity: 0.5 },
 ];
 
 export default function App() {
   const lastRef = useRef(0);
-
   const [showComputer, setShowComputer] = useState(false);
+  const [activeLayer, setActiveLayer] = useState(0);
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowComputer(true), 1000);
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveLayer((prev) => (prev === 0 ? 1 : 0));
+    }, 3400);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleMove = (e) => {
@@ -90,7 +98,8 @@ export default function App() {
                   -((l.z - Math.min(...layers.map((l) => l.z))) / 800) * 2 - 100
                 }px) scale(${1.4 + Math.abs(l.z) / 800})`,
                 zIndex: 10 + i,
-                opacity: l.opacity,
+                opacity: activeLayer === i ? l.opacity : 0,
+                transition: "opacity 3s ease-in-out",
               }}
             >
               <img
@@ -112,6 +121,16 @@ export default function App() {
               zIndex: -500,
             }}
           />
+          <img
+            src="./purple_blobby.png"
+            className="z-[-500] translate-y-[700px]"
+          />
+          <span className="fixed opacity-10 top-0 right-0 w-[1000px] h-[1000px] z-[-750] opacity animate-[spin_40s_linear_infinite] translate-x-[-500px] translate-y-[-500px]">
+            <img
+              src="./flame_circle.png"
+              className="w-full h-full object-contain"
+            />
+          </span>
         </div>
 
         {/* Title */}
@@ -119,14 +138,14 @@ export default function App() {
           className="flex flex-row items-start"
           style={{
             position: "absolute",
-            bottom: "-300px",
+            bottom: "-200px",
             left: "100px",
             zIndex: 500,
           }}
         >
           <div className="flex flex-col">
             <img
-              src="./ignite_text.png"
+              src="./ignite_no_outline.png"
               alt="title"
               style={{ width: "600px", height: "auto" }}
               className="computer-hover"
@@ -140,25 +159,15 @@ export default function App() {
               <img
                 src="./down.png"
                 alt="down"
-                style={{ width: "200px", height: "auto" }}
-                className="justify-center items-center text-center mt-10"
+                style={{ width: "100px", height: "auto" }}
+                className="justify-center items-center text-center mt-10 bounce"
               />
             </div>
 
-            <div className=" justify-center items-center text-center mt-24">
+            <div className=" justify-center items-center text-center mt-24 computer-hover">
               <EmailButton />
             </div>
           </div>
-
-          <span
-            className="absolute w-4 h-4 rounded-full"
-            style={{
-              transformOrigin: "50% 50%",
-              animation: "spin 10s linear infinite",
-            }}
-          >
-            heloooo
-          </span>
 
           <img
             src="./computer.png"
@@ -173,42 +182,24 @@ export default function App() {
         </div>
 
         {/* Instructions */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-900px",
-            left: "267px",
-            transform: `translateZ(200px)`,
-            zIndex: 500,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-left",
-            gap: "40px",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: "-40px",
-              backgroundColor: "salmon",
-              borderRadius: "10px",
-              zIndex: -1,
-            }}
-          />
-          <div className="overflow-hidden w-full py-10 max-w-5xl">
-            <div className="flex flex-col gap-4 mx-5">
-              <p>How it works</p>
-              <div className="bg-blue-200 text-center rounded-xl">
-                <p>1. draw and design your character + backgrounds!</p>
-              </div>
-              <div className="bg-blue-200 p-5 max-w-sm text-center rounded-xl">
-                <p>2. code your game - make it playable on the device!</p>
-              </div>
-              <div className="bg-blue-200 p-5 max-w-sm text-center rounded-xl">
-                <p>
-                  3. submit your game + wait for the console to arrive in mail!
-                </p>
-              </div>
+        <div className="absolute bottom-[-900px] left-1/2 [transform:translateZ(200px)_translateX(-50%)] z-[500] flex flex-col items-center justify-center text-center gap-10">
+          <div className="absolute -inset-10 bg-[salmon]/40 rounded-[10px] -z-10" />
+
+          <div className="w-full max-w-7xl py-10 flex flex-col gap-4 mx-5 overflow-hidden">
+            <p className="text-3xl font-semibold">Let's get started!</p>
+
+            <div className="bg-blue-200 text-center rounded-xl p-5 max-w-lg w-full mx-auto">
+              <p className="text-lg">1. Set up a coding app with your phone or use a code editor on a public computer.</p>
+            </div>
+
+            <div className="bg-blue-200 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+              <p className="text-lg">2. Code a project of your choice (website, game, app, etc.). Track your time with Hackatime while doing so.</p>
+            </div>
+
+            <div className="bg-blue-200 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+              <p className="text-lg">
+                3. After 10 hours, submit your project! We'll review it and then ship you a personal computer!
+              </p>
             </div>
           </div>
         </div>
@@ -239,9 +230,6 @@ export default function App() {
               className="computer-hover w-48"
             />
           </a>
-        </div>
-        <div className="bg-lightBlue text-white p-10 text-4xl">
-          Tailwind test
         </div>
       </div>
     </>

@@ -82,7 +82,7 @@ a:hover {
 }
 
 .computer-hover:hover {
-  transform: scale(1.15);
+  transform: scale(1.08);
 }
 
 .cursor-trail {
@@ -126,4 +126,17 @@ a:hover {
 @keyframes spin {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); 
+  }
+}
+
+.bounce {
+  animation: bounce 1s infinite ease-in-out;
 }

@@ -13,6 +13,13 @@ const layers = [
 export default function App() {
   const lastRef = useRef(0);
 
+  const [showComputer, setShowComputer] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowComputer(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const handleMove = (e) => {
     const now = performance.now();
     if (now - lastRef.current < 30) return;
@@ -69,40 +76,10 @@ export default function App() {
 
   return (
     <>
-      {/*header*/}
-      <header className="bg-transparent sticky top-0 left-0 w-full z-[9999] will-change-transform">
-
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/*navigation links */}
-          <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-700 hover:text-black">
-              About
-            </a>
-            <a href="#features" className="text-gray-700 hover:text-black">
-              Features
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-black">
-              Contact
-            </a>
-          </nav>
-
-          {/* sign upp */}
-          <div>
-            <a
-              href="#signup"
-              className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
-            >
-              Sign Up
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-          </div>
-        </div>
-      </header>
-
-      <div style={{ ...containerStyle }} className="bg-black w-full min-h-screen">
+      <div
+        style={{ ...containerStyle }}
+        className="bg-black w-full min-h-screen"
+      >
         <div style={groupStyle}>
           {layers.map((l, i) => (
             <div
@@ -173,10 +150,24 @@ export default function App() {
             </div>
           </div>
 
+          <span
+            className="absolute w-4 h-4 rounded-full"
+            style={{
+              transformOrigin: "50% 50%",
+              animation: "spin 10s linear infinite",
+            }}
+          >
+            heloooo
+          </span>
+
           <img
             src="./computer.png"
             alt="computer"
-            className="computer-hover  object-contain"
+            className={`computer-hover object-contain transform transition-opacity duration-[100000ms] ease-in-out ${
+              showComputer
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
             style={{ width: "700px", height: "auto" }}
           />
         </div>
@@ -185,8 +176,8 @@ export default function App() {
         <div
           style={{
             position: "absolute",
-            bottom: "-1000px",
-            left: "250px",
+            bottom: "-900px",
+            left: "267px",
             transform: `translateZ(200px)`,
             zIndex: 500,
             display: "flex",
@@ -199,13 +190,13 @@ export default function App() {
             style={{
               position: "absolute",
               inset: "-40px",
-              backgroundColor: "#24023F",
-              borderRadius: "40px",
+              backgroundColor: "salmon",
+              borderRadius: "10px",
               zIndex: -1,
             }}
           />
           <div className="overflow-hidden w-full py-10 max-w-5xl">
-            <div className="flex flex-wrap justify-center gap-8 mx-5">
+            <div className="flex flex-col gap-4 mx-5">
               <p>How it works</p>
               <div className="bg-blue-200 text-center rounded-xl">
                 <p>1. draw and design your character + backgrounds!</p>

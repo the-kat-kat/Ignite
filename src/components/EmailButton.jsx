@@ -42,9 +42,9 @@ const EmailSignup = () => {
   };
 
   return (
-    <div className="mx-auto p-6 rounded-2xl bg-white" >      
+    <div className="mx-auto p-6 rounded-2xl bg-white/70" >      
       {status && (
-        <div className={`text-center p-2 mb-4 ${status.type === 'error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
+        <div className={`text-center rounded-2xl p-2 mb-4 ${status.type === 'error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
           {status.message}
         </div>
       )}
@@ -52,7 +52,7 @@ const EmailSignup = () => {
       <form onSubmit={handleSubmit} className="flex flex-row justify-center items-center gap-3" >
         <input
           type="email"
-          className="p-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 text-blue-100 text-sm "
+          className="w-96 h-12 p-2 border border-salmon rounded-md focus:outline-none focus:ring-2 focus:ring-darkGreen text-black text-sm "
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -60,13 +60,13 @@ const EmailSignup = () => {
         />
         <button
           type="submit"
-          className={`p-2 text-white rounded-md bg-salmon ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
+          className={`h-12 p-2 text-white text-sm rounded-md bg-salmon ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-salmon hover:bg-darkGreen'}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Submitting...' : 'Join the Slack'}
         </button>
       </form>
-      <p className="text-blue-900">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
+      <p className="text-darkGreen mt-4">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
     </div>
   );
 };

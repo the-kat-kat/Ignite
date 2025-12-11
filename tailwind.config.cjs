@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         salmon: "#e3715b",
-        darkGreen: "#227851"
+        darkGreen: "#227851",
+        darkYellow: "#bf8d3b"
       },
     }
   },

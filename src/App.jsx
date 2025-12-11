@@ -125,6 +125,11 @@ export default function App() {
             src="./purple_blobby.png"
             className="z-[-500] translate-y-[700px]"
           />
+          <img src="./dots.png" className="z-[-100] translate-y-[100px]" />
+          <img
+            src="./white_border.png"
+            className="absolute top-0 left-0 w-full z-[0]"
+          />
           <span className="fixed opacity-10 top-0 right-0 w-[1000px] h-[1000px] z-[-750] opacity animate-[spin_40s_linear_infinite] translate-x-[-500px] translate-y-[-500px]">
             <img
               src="./flame_circle.png"
@@ -188,17 +193,24 @@ export default function App() {
           <div className="w-full max-w-7xl py-10 flex flex-col gap-4 mx-5 overflow-hidden">
             <p className="text-3xl font-semibold">Let's get started!</p>
 
-            <div className="bg-blue-200 text-center rounded-xl p-5 max-w-lg w-full mx-auto">
-              <p className="text-lg">1. Set up a coding app with your phone or use a code editor on a public computer.</p>
-            </div>
-
-            <div className="bg-blue-200 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
-              <p className="text-lg">2. Code a project of your choice (website, game, app, etc.). Track your time with Hackatime while doing so.</p>
-            </div>
-
-            <div className="bg-blue-200 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+            <div className="bg-darkYellow text-center rounded-xl p-5 max-w-lg w-full mx-auto">
               <p className="text-lg">
-                3. After 10 hours, submit your project! We'll review it and then ship you a personal computer!
+                1. Set up a coding app with your phone or use a code editor on a
+                public computer.
+              </p>
+            </div>
+
+            <div className="bg-darkYellow p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+              <p className="text-lg">
+                2. Code a project of your choice (website, game, app, etc.).
+                Track your time with Hackatime while doing so.
+              </p>
+            </div>
+
+            <div className="bg-darkYellow p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+              <p className="text-lg">
+                3. After 10 hours, submit your project! We'll review it and then
+                ship you a personal computer!
               </p>
             </div>
           </div>

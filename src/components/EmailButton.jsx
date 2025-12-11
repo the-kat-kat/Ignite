@@ -49,15 +49,14 @@ const EmailSignup = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="flex flex-row items-center gap-3" >
+      <form onSubmit={handleSubmit} className="flex flex-row justify-center items-center gap-3" >
         <input
           type="email"
-          className="p-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-200 text-sm "
+          className="p-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 text-blue-100 text-sm "
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isSubmitting}
-          style={{ backgroundColor: "#5d70d9", borderRadius: "16px"}}
         />
         <button
           type="submit"

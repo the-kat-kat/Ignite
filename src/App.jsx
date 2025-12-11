@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 //import Toolbar from "./components/Toolbar.jsx";
 import "./App.css";
 import EmailButton from "./components/EmailButton.jsx";
@@ -7,16 +7,16 @@ import { Outlet, Link } from "react-router-dom";
 
 const layers = [
   { src: "./ignite_1.png", z: -1000, opacity: 1 },
-  { src: "./ignite_2.png", z: 0, opacity: 0.4 },
+  { src: "./ignite_2.png", z: -500, opacity: 0.8 },
 ];
 
 export default function App() {
-  let last = 0;
+  const lastRef = useRef(0);
 
   const handleMove = (e) => {
     const now = performance.now();
-    if (now - last < 30) return;
-    last = now;
+    if (now - lastRef.current < 30) return;
+    lastRef.current = now;
 
     const trail = document.createElement("div");
     trail.className = "cursor-trail";
@@ -26,6 +26,13 @@ export default function App() {
     document.body.appendChild(trail);
     setTimeout(() => trail.remove(), 300);
   };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+    };
+  }, []);
 
   const containerStyle = {
     perspective: "1000px",
@@ -86,66 +93,66 @@ export default function App() {
         <div
           style={{
             ...layerBase,
-            transform: "translateZ(0px) translateY(100px) scale(3)",
+            transform: "translateZ(0px) translateY(600px) scale(3)",
             backgroundColor: "#24023F",
             top: "100%",
             height: "150vh",
             width: "100%",
-            zIndex: 0,
+            zIndex: -500,
           }}
         />
       </div>
 
       {/* Title */}
-      <div
+      <div className ="flex flex-row items-start"
         style={{
           position: "absolute",
-          bottom: "100px",
+          bottom: "-300px",
           left: "100px",
           zIndex: 500,
           display: "flex",
           flexDirection: "row",
-          alignItems: "flex-end",
-          gap: "-40px",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="flex flex-col">
           <img
             src="./ignite_text.png"
             alt="title"
             style={{ width: "500px", height: "auto" }}
-            className="computer-hover"
+            className= "computer-hover"
           />
 
-          <h1 className="text-6xl font-extrabold text-white">
+          <h1 className="text-3xl font-extrabold text-white">
             Code for 10 hours, earn your own personal computer!
           </h1>
 
-          <div
-            className="relative mt-6 inline-block  -inset-8 rounded-[32px] bg-[#24023F] p-5"
-            style={{
-              backgroundColor: "#bfdbfe",
-              borderRadius: "16px",
-              padding: "16px",
-            }}
-          >
+          <img
+            src="./down.png"
+            alt="down"
+            style={{ width: "200px", height: "auto" }}
+            className= "justify-center items-center text-center mt-10"
+          />
+
+          <div className=" justify-center items-center text-center mt-24">
             <EmailButton />
+            
           </div>
         </div>
 
         <img
           src="./computer.png"
           alt="computer"
-          className="computer-hover"
+          className="computer-hover  object-contain"
           style={{ width: "500px", height: "auto" }}
         />
       </div>
+      
 
       {/* Instructions */}
       <div
         style={{
           position: "absolute",
-          bottom: "-500px",
+          bottom: "-1000px",
           left: "250px",
           transform: `translateZ(200px)`,
           zIndex: 500,
@@ -188,8 +195,8 @@ export default function App() {
           position: "fixed",
           top: 0,
           left: "50px",
-          width: "100vw",
-          height: "100vh",
+          width: "50vw",
+          height: "50vh",
           zIndex: 10,
           pointerEvents: "none",
         }}
@@ -201,19 +208,13 @@ export default function App() {
           rel="noopener noreferrer"
           className="absolute top-0 left-2"
         >
-          {/*<img
+          <img
             src="https://assets.hackclub.com/flag-orpheus-top.svg"
             alt="Hack Club"
             style={{ pointerEvents: "auto" }}
-            className="computer-hover"
-          />*/}
+            className="computer-hover w-48"
+          />
         </a>
-
-        <div className="min-h-screen flex items-center justify-center bg-black text-white">
-          <h1 className="text-5xl font-bold text-lightPink">
-            Tailwind is working ✅
-          </h1>
-        </div>
       </div>
 
       <div className="bg-lightBlue text-white p-10 text-4xl">Tailwind test</div>

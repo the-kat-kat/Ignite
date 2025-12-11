@@ -6,8 +6,8 @@ import EmailButton from "./components/EmailButton.jsx";
 import { Outlet, Link } from "react-router-dom";
 
 const layers = [
-  { src: "./ignite_1.png", z: -1000, opacity: 0.5 },
-  { src: "./ignite_2.png", z: -500, opacity: 0.5 },
+  { src: "./ignite_1.webp", z: -1000, opacity: 0.5 },
+  { src: "./ignite_2.webp", z: -500, opacity: 0.5 },
 ];
 
 export default function App() {
@@ -55,7 +55,7 @@ export default function App() {
     height: "100vh",
     overflowY: "auto",
     overflowX: "hidden",
-    backgroundImage: "url('./ignite_bg.png')",
+    backgroundImage: "url('./ignite_bg.webp')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

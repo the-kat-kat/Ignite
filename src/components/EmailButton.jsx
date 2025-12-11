@@ -66,7 +66,7 @@ const EmailSignup = () => {
           {isSubmitting ? 'Submitting...' : 'Join the Slack'}
         </button>
       </form>
-      <p className="text-black mt-4">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
+      <p className="text-black text-sm mt-4">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
     </div>
   );
 };

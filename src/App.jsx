@@ -64,7 +64,7 @@ export default function App() {
   const groupStyle = {
     transformStyle: "preserve-3d",
     position: "relative",
-    height: "250vh",
+    height: window.innerWidth < 768 ? "150vh" : "250vh"
   };
 
   const layerBase = {
@@ -111,20 +111,24 @@ export default function App() {
             </div>
           ))}
           <div
+            className="relative w-full"
             style={{
               ...layerBase,
-              transform: "translateZ(0px) translateY(600px) scale(3)",
+              transform:
+                "translateZ(0px) translateY(0px) md:translateY(600px) scale(3)",
               backgroundColor: "#24023F",
               top: "100%",
               height: "150vh",
               width: "100%",
               zIndex: -500,
             }}
-          />
-          <img
-            src="./purple_blobby.png"
-            className="z-[-500] translate-y-[700px]"
-          />
+          >
+            <img
+              src="./purple_blobby.png"
+              alt="blobby"
+              className="absolute bottom-full w-3/4 md:w-1/2 lg:w-1/3 left-1/2 -translate-x-1/2 translate-y-[20px] z-10"
+            />
+          </div>
           <img src="./dots.png" className="z-[-100] translate-y-[100px]" />
           <img
             src="./white_border.png"
@@ -139,76 +143,58 @@ export default function App() {
         </div>
 
         {/* Title */}
-        <div
-          className="flex flex-row items-start"
-          style={{
-            position: "absolute",
-            bottom: "-200px",
-            left: "100px",
-            zIndex: 500,
-          }}
-        >
-          <div className="flex flex-col">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center px-4 fixed top-[100px] md:top-[140px] left-0 z-50">
+          {/* Title + Email */}
+          <div className="flex flex-col items-center md:items-start">
             <img
               src="./ignite_no_outline.png"
               alt="title"
-              style={{ width: "600px", height: "auto" }}
-              className="computer-hover"
+              className="w-2/3 sm:w-2/3 md:w-[600px] mx-auto md:mx-0"
             />
-
-            <h1 className="text-3xl font-extrabold text-white">
+            <h1 className="w-3/4 text-xl sm:text-2xl md:text-3xl font-extrabold text-white text-center md:text-left mt-4">
               Code for 10 hours, earn your own personal computer!
             </h1>
-
-            <div className="flex justify-center mt-10">
-              <img
-                src="./down.png"
-                alt="down"
-                style={{ width: "100px", height: "auto" }}
-                className="justify-center items-center text-center mt-10 bounce"
-              />
-            </div>
-
-            <div className=" justify-center items-center text-center mt-24 computer-hover">
+            <div className="mt-8 w-3/4">
               <EmailButton />
             </div>
           </div>
 
+          {/* Computer Image */}
           <img
             src="./computer.png"
             alt="computer"
-            className={`computer-hover object-contain transform transition-opacity duration-[100000ms] ease-in-out ${
-              showComputer
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-            style={{ width: "700px", height: "auto" }}
+            className={`computer-hover object-contain transform transition-opacity duration-[100000ms] ease-in-out
+    ${showComputer ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+    w-3/4 sm:w-2/3 md:w-[600px] mt-6 md:mt-0 md:ml-[-250px]`}
+            style={{ height: "auto" }}
           />
         </div>
 
         {/* Instructions */}
-        <div className="absolute bottom-[-900px] left-1/2 [transform:translateZ(200px)_translateX(-50%)] z-[500] flex flex-col items-center justify-center text-center gap-10">
-          <div className="absolute -inset-10 bg-[salmon]/40 rounded-[10px] -z-10" />
+        <div className="absolute bottom-[-700px] md:bottom-[-500px] left-1/2 [transform:translateZ(200px)_translateX(-50%)] z-[500] flex flex-col items-center justify-center text-center gap-10">
+          <div className="absolute -inset-4 bg-[salmon]/40 rounded-[10px] -z-10" />
 
-          <div className="w-full max-w-7xl py-10 flex flex-col gap-4 mx-5 overflow-hidden">
-            <p className="text-3xl font-semibold">Let's get started!</p>
+          <div className="w-full max-w-7xl py-4 flex flex-col gap-4 mx-5 overflow-hidden">
+            <p className="text-xl md:text-3xl font-semibold">
+              Let's get started!
+            </p>
 
             <div className="bg-darkYellow text-center rounded-xl p-5 max-w-lg w-full mx-auto">
-              <p className="text-lg">
+              <p className="text-sm md:text-lg">
                 1. Set up a coding app with your phone or use a code editor on a
                 public computer.
               </p>
             </div>
 
             <div className="bg-darkYellow p-5 max-w-lg w-full text-center rounded-xl mx-auto">
-              <p className="text-lg">
+              <p className="text-sm md:text-lg">
                 2. Code a project of your choice (website, game, app, etc.).
                 Track your time with Hackatime while doing so.
               </p>
             </div>
 
             <div className="bg-darkYellow p-5 max-w-lg w-full text-center rounded-xl mx-auto">
-              <p className="text-lg">
+              <p className="text-sm md:text-lg">
                 3. After 10 hours, submit your project! We'll review it and then
                 ship you a personal computer!
               </p>

@@ -106,7 +106,7 @@ export default function App() {
                 src={l.src}
                 alt={`layer-${i}`}
                 style={imgStyle}
-                className="transform scale-75 sm:scale-90 md:scale-100 lg:scale-110 xl:scale-125"
+                className="transform scale-250 sm:scale-200 md:scale-125 lg:scale-150"
               />
             </div>
           ))}

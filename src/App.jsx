@@ -64,7 +64,7 @@ export default function App() {
   const groupStyle = {
     transformStyle: "preserve-3d",
     position: "relative",
-    height: window.innerWidth < 768 ? "150vh" : "250vh"
+    height: window.innerWidth < 768 ? "150vh" : "250vh",
   };
 
   const layerBase = {
@@ -111,25 +111,18 @@ export default function App() {
             </div>
           ))}
           <div
-            className="relative w-full"
-            style={{
-              ...layerBase,
-              transform:
-                "translateZ(0px) translateY(0px) md:translateY(600px) scale(3)",
-              backgroundColor: "#24023F",
-              top: "100%",
-              height: "150vh",
-              width: "100%",
-              zIndex: -500,
-            }}
+            className="relative w-full top-full h-[80vh] md:h-[150vh] translate-y-[100px] md:translate-y-[600px] scale-[3] z-[-500] bg-[#24023F]"
           >
             <img
               src="./purple_blobby.png"
               alt="blobby"
-              className="absolute bottom-full w-3/4 md:w-1/2 lg:w-1/3 left-1/2 -translate-x-1/2 translate-y-[20px] z-10"
+              className="scale-1 absolute bottom-full w-full translate-y-[100px] md:translate-y-[260px] z-10 scale-y-[0.3] md:scale-y-[0.4]"
             />
           </div>
-          <img src="./dots.png" className="z-[-100] translate-y-[100px]" />
+          <img
+            src="./dots.png"
+            className="z-[-100] translate-y-[-180px] md:translate-y-[-500px]"
+          />
           <img
             src="./white_border.png"
             className="absolute top-0 left-0 w-full z-[0]"

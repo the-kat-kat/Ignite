@@ -42,7 +42,7 @@ const EmailSignup = () => {
   };
 
   return (
-    <div className="mx-auto p-6 rounded-2xl bg-white/70" >      
+    <div className="mx-auto p-6 rounded-2xl bg-white/30 backdrop-blur-md border border-white/20" >      
       {status && (
         <div className={`text-center rounded-2xl p-2 mb-4 ${status.type === 'error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
           {status.message}
@@ -60,7 +60,7 @@ const EmailSignup = () => {
         />
         <button
           type="submit"
-          className={`h-12 p-2 text-white text-sm rounded-md bg-salmon ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-salmon hover:bg-darkGreen'}`}
+          className={`h-12 p-2 text-white text-sm rounded-md border border-white/60 bg-salmon ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-salmon hover:bg-darkGreen'}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Submitting...' : 'Join the Slack'}

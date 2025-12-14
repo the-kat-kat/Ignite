@@ -4,6 +4,7 @@ import "./App.css";
 import EmailButton from "./components/EmailButton.jsx";
 import UserTag from "./components/ui/UserTag";
 import { Box } from "@radix-ui/themes";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -147,7 +148,7 @@ export default function App() {
           <img
             src="./blob.png"
             alt="blobby"
-            className="absolute bottom-[-20vh] left-1/2 -translate-x-1/2 w-[160%] max-w-none z-0 pointer-events-none"
+            className="absolute bottom-[60vh] left-1/2 -translate-x-1/2 scale-x-[300]  z-0 pointer-events-none"
           />
         </section>
 
@@ -184,18 +185,18 @@ export default function App() {
         <div className="w-full relative flex flex-col items-center justify-center gap-4 mt-32 md:mt-[-990px]">
           {/* Instructions */}
           <div
-            className="relative w-full p-8 flex flex-col items-center gap-6 text-center
-                  bg-salmon/40 backdrop-blur-md border border-white/20 rounded-xl"
+            className="max-w-7xl relative w-full p-8 flex flex-col items-center gap-6 text-center
+                  bg-white/40 backdrop-blur-sm border border-white/20 rounded-xl"
           >
             <p className="text-xl md:text-3xl font-semibold">
-                Want to code but don't have easy access to a computer?
-              </p>
+              Want to code but don't have easy access to a computer?
+            </p>
           </div>
 
-          <section className="items-center justify-center">
+          <section className="py-4 items-center justify-center">
             <div
               className="relative w-full p-8 flex flex-col items-center gap-6 text-center
-                  bg-salmon/40 backdrop-blur-md border border-white/20 rounded-xl"
+                  bg-salmon/40 backdrop-blur-sm border border-white/20 rounded-xl"
             >
               <p className="text-xl md:text-3xl font-semibold">
                 Let's get started!
@@ -203,19 +204,14 @@ export default function App() {
               <div className="max-w-7xl py-4 flex flex-row gap-4 mx-5 overflow-hidden">
                 <div className="bg-darkYellow border border-white/10 text-center rounded-xl p-5 w-full mx-auto">
                   <p className="text-sm md:text-base">
-                    1. Create a new {" "}
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition">
-                      Github
-                    </a>{" "}
-                    repository and open it in{" "}
-                    <a href="https://github.com/features/codespaces" target="_blank" rel="noopener noreferrer" className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition">
-                      Codespaces
-                    </a>{" "}
-                    Never used GitHub before? Follow this{" "}
-                    <a href="https://www.canva.com/design/DAGr1zQLfE4/eqe5sSP6hE9-4SZez72QFA/view?utm_content=DAGr1zQLfE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h25bb5bce98#40 " target="_blank" rel="noopener noreferrer" className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition">
-                      tutorial
-                    </a>{" "}
-                    on how to create a simple website in Codespaces! 
+                    1. Follow this {""}
+                    <Link
+                      to= "/codespaces"
+                      className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                    >
+                      guide
+                    </Link> {""}
+                    to create a new GitHub repository and open it up in Codespaces, then set it up with Hackatime. Hackatime will track the time you spend on your project so that we can verify your hours.
                   </p>
                   <img
                     className="w-[200px] md:w-[1000px] object-cover"
@@ -226,11 +222,18 @@ export default function App() {
 
                 <div className="bg-darkYellow border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
                   <p className="text-sm md:text-base">
-                    2. We need to validate the time you spend on your project! Create a{" "}
-                    <a href="https://www.canva.com/design/DAGr1zQLfE4/eqe5sSP6hE9-4SZez72QFA/view?utm_content=DAGr1zQLfE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h25bb5bce98#40 " target="_blank" rel="noopener noreferrer" className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition">
+                    2. We need to validate the time you spend on your project!
+                    Create a{" "}
+                    <a
+                      href="https://www.canva.com/design/DAGr1zQLfE4/eqe5sSP6hE9-4SZez72QFA/view?utm_content=DAGr1zQLfE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h25bb5bce98#40 "
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                    >
                       Hackatime
                     </a>{" "}
-                    account and follow the VSCode instructions to set it up. You'll have to install the Wakatime extension.
+                    account and follow the VSCode instructions to set it up.
+                    You'll have to install the Wakatime extension.
                   </p>
                 </div>
 
@@ -259,7 +262,7 @@ export default function App() {
           <section
             id="faq"
             aria-labelledby="faqHeading"
-            className="mx-auto w-full max-w-none sm:max-w-4xl scroll-mt-24 py-12 max-[500px]:py-[20px]"
+            className="mx-auto w-full max-w-none sm:max-w-4xl scroll-mt-24 py-12 max-[500px]:py-[10px]"
           >
             <h2
               id="faqHeading"
@@ -343,17 +346,6 @@ export default function App() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="q2" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  How do I set up Hackatime?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  Create an account, install a WakaTime plugin for your editor,
-                  and sign in. Hackatime reads heartbeats to show your coding
-                  time.
-                </AccordionContent>
-              </AccordionItem>
-
               <AccordionItem value="q3" className="px-4 max-[500px]:px-[12px]">
                 <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
                   Can I use AI tools?
@@ -363,19 +355,6 @@ export default function App() {
                   meaningful personal work and attribute any generated assets
                   when relevant. Less than 30 percent of your project should be
                   AI.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="q4" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  What links must I submit?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Working demo link, site, video, or app</li>
-                    <li>Public GitHub repo</li>
-                    <li>Your hackatime project</li>
-                  </ul>
                 </AccordionContent>
               </AccordionItem>
 
@@ -396,53 +375,6 @@ export default function App() {
                 <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
                   <ul className="list-disc list-inside space-y-1">
                     <li>Yes, it is crucial you use hackatime.</li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="q7" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  Can I connect with others?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Join the Hackclub Slack to connect.</li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="q8" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  When does this launch?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>October second</li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="q9" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  I decided on my idea, now what?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>
-                      Share your idea with{" "}
-                      <UserTag href="https://hackclub.slack.com/team/U07UKLZT9N1">
-                        @Nirvaan
-                      </UserTag>
-                      ,{" "}
-                      <UserTag href="https://hackclub.slack.com/team/U04QD71QWS0">
-                        @manitej
-                      </UserTag>
-                      , or post it in the{" "}
-                      <UserTag href="https://hackclub.slack.com/archives/C09A37XECJV">
-                        #fanpage
-                      </UserTag>{" "}
-                      channel on Hack Club Slack for approval.
-                    </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>

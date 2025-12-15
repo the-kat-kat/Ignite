@@ -187,7 +187,7 @@ export default function App() {
             style={{ height: "auto" }}
           />
         </div>
-        <div className="w-full relative flex flex-col items-center justify-center gap-4 mt-32 px-4 md:mt-[-990px]">
+        <div className="w-full relative flex flex-col items-center justify-center gap-4 px-4 mt-[-850px] md:mt-[-990px]">
           {/* Instructions */}
           <div
             className="max-w-7xl relative w-full p-8 flex flex-col items-center gap-6 text-center
@@ -219,7 +219,7 @@ export default function App() {
               <p className="text-xl md:text-3xl font-semibold">
                 Let's get started!
               </p>
-              <div className="max-w-7xl py-4 flex flex-row gap-4 mx-5 overflow-hidden">
+              <div className="max-w-7xl py-4 flex flex-col md:flex-row gap-4 mx-5">
                 <div className="bg-white/30 border border-white/10 text-center rounded-xl p-5 w-full mx-auto">
                   <p className="text-sm md:text-base">
                     1. Follow this {""}
@@ -388,13 +388,13 @@ export default function App() {
           <img
             src="https://assets.hackclub.com/flag-orpheus-top.svg"
             alt="Hack Club"
-            className="computer-hover w-[200px]"
+            className="computer-hover w-[100px] md:w-[200px]"
           />
         </a>
 
         <a
           href="https://submit.hackclub.com/ignite"
-          className="pointer-events-auto p-2 mt-4 rounded-lg bg-blue-900/30 text-white text-3xl border border-white/50 hover:bg-white/20 transition"
+          className="pointer-events-auto p-2 mt-4 rounded-lg bg-blue-900/30 text-white text-base md:text-3xl border border-white/50 hover:bg-white/20 transition"
         >
           Submit
         </a>

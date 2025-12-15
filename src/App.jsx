@@ -168,7 +168,7 @@ export default function App() {
             <div className="mt-8 w-3/4">
               <a
                 href="https://hackclub.enterprise.slack.com/archives/C09SGKRQGA0"
-                className="pointer-events-auto p-4 mt-4 rounded-lg bg-blue-900/30 text-white text-lg border border-white/50 hover:bg-white/20 transition"
+                className="computer-hover pointer-events-auto p-4 mt-4 rounded-lg bg-blue-900/30 text-white text-lg border border-white/50 hover:bg-white/20 transition"
               >
                 Interested? Join the Slack
               </a>
@@ -394,7 +394,7 @@ export default function App() {
 
         <a
           href="https://submit.hackclub.com/ignite"
-          className="pointer-events-auto p-2 mt-4 rounded-lg bg-blue-900/30 text-white text-base md:text-3xl border border-white/50 hover:bg-white/20 transition"
+          className="pointer-events-auto p-2 mt-4 rounded-lg bg-blue-900/30 text-white text-base md:text-3xl border border-white/50 hover:bg-black/20 computer-hover transition"
         >
           Submit
         </a>

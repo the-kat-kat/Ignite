@@ -44,7 +44,7 @@ const EmailSignup = () => {
   return (
     <div className="mx-auto p-6 rounded-2xl bg-white/30 backdrop-blur-md border border-white/20" >      
       {status && (
-        <div className={`text-center rounded-2xl p-2 mb-4 ${status.type === 'error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
+        <div className={`text-center text-sm rounded-2xl p-2 mb-4 ${status.type === 'error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
           {status.message}
         </div>
       )}
@@ -66,7 +66,7 @@ const EmailSignup = () => {
           {isSubmitting ? 'Submitting...' : 'Join the Slack'}
         </button>
       </form>
-      <p className="text-black text-sm mt-4">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
+      <p className="text-white text-sm mt-4">Not currently in the Hack Club Slack? Enter your email to get join instructions!</p>
     </div>
   );
 };

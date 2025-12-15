@@ -148,7 +148,7 @@ export default function App() {
           <img
             src="./blob.png"
             alt="blobby"
-            className="absolute bottom-[60vh] left-1/2 -translate-x-1/2 scale-x-[300]  z-0 pointer-events-none"
+            className="absolute bottom-[58vh] left-1/2 -translate-x-1/2 scale-x-[300]  z-0 pointer-events-none"
           />
         </section>
 
@@ -182,64 +182,104 @@ export default function App() {
             style={{ height: "auto" }}
           />
         </div>
-        <div className="w-full relative flex flex-col items-center justify-center gap-4 mt-32 md:mt-[-990px]">
+        <div className="w-full relative flex flex-col items-center justify-center gap-4 mt-32 px-4 md:mt-[-990px]">
           {/* Instructions */}
           <div
             className="max-w-7xl relative w-full p-8 flex flex-col items-center gap-6 text-center
-                  bg-white/40 backdrop-blur-sm border border-white/20 rounded-xl"
+                 backdrop-blur-sm border border-white/20 rounded-xl"
           >
-            <p className="text-xl md:text-3xl font-semibold">
-              Want to code but don't have easy access to a computer?
-            </p>
+            <div className="text-center">
+              <p className="text-xl md:text-3xl font-semibold">
+                Want to code but don't have easy access to a computer?
+              </p>
+
+              <p className="mt-4 text-sm md:text-base opacity-90">
+                ➤ No personal computer?
+                <br />
+                ➤ Only have access to a school or library computer?
+                <br />➤ Wish you had more time to code?
+              </p>
+
+              <p className="mt-2 text-base md:text-lg font-semibold">
+                This event is for you!
+              </p>
+            </div>
           </div>
 
-          <section className="py-4 items-center justify-center">
+          <section className="max-w-7xl  py-4 items-center justify-center">
             <div
               className="relative w-full p-8 flex flex-col items-center gap-6 text-center
-                  bg-salmon/40 backdrop-blur-sm border border-white/20 rounded-xl"
+                  bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl"
             >
               <p className="text-xl md:text-3xl font-semibold">
                 Let's get started!
               </p>
               <div className="max-w-7xl py-4 flex flex-row gap-4 mx-5 overflow-hidden">
-                <div className="bg-darkYellow border border-white/10 text-center rounded-xl p-5 w-full mx-auto">
+                <div className="bg-white/30 border border-white/10 text-center rounded-xl p-5 w-full mx-auto">
                   <p className="text-sm md:text-base">
                     1. Follow this {""}
                     <Link
-                      to= "/codespaces"
+                      to="/codespaces"
                       className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
                     >
                       guide
-                    </Link> {""}
-                    to create a new GitHub repository and open it up in Codespaces, then set it up with Hackatime. Hackatime will track the time you spend on your project so that we can verify your hours.
+                    </Link>{" "}
+                    {""}
+                    to create a new GitHub repository and open it up in
+                    Codespaces, then set it up with Hackatime. Hackatime will
+                    track the time you spend on your project so that we can
+                    verify your hours.
                   </p>
-                  <img
-                    className="w-[200px] md:w-[1000px] object-cover"
-                    src="./computer.png"
-                    alt="computer"
-                  />
                 </div>
 
-                <div className="bg-darkYellow border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+                <div className="bg-white/30 border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
                   <p className="text-sm md:text-base">
-                    2. We need to validate the time you spend on your project!
-                    Create a{" "}
+                    2. Code your project on{" "}
                     <a
-                      href="https://www.canva.com/design/DAGr1zQLfE4/eqe5sSP6hE9-4SZez72QFA/view?utm_content=DAGr1zQLfE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h25bb5bce98#40 "
+                      href="https://github.com/features/codespaces"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
                     >
-                      Hackatime
-                    </a>{" "}
-                    account and follow the VSCode instructions to set it up.
-                    You'll have to install the Wakatime extension.
+                      Codespaces
+                    </a>
+                    . You could create a personal website (
+                    <a
+                      href="https://workshops.hackclub.com/personal_website/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                    >
+                      tutorial
+                    </a>
+                    ), a game in JavaScript (
+                    <a
+                      href="https://www.youtube.com/watch?v=r9I4DuGmJ2Y"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                    >
+                      video guide
+                    </a>
+                    ), or whatever original project you can think of. It should
+                    be an original project, not a school assignment or a copy of
+                    a tutorial.
                   </p>
                 </div>
 
-                <div className="bg-darkYellow border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
+                <div className="bg-white/30 border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
                   <p className="text-sm md:text-base">
-                    3. After 10 hours, submit your project! We'll review it and
+                    3. After 10 hours, {" "}
+                    <a
+                  href="https://submit.hackclub.com/ignite"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                >
+                  submit
+                </a>
+                {" "}
+                     your project! We'll review it and
                     then ship you a personal computer!
                   </p>
                 </div>
@@ -278,136 +318,76 @@ export default function App() {
             >
               <AccordionItem value="q0" className="px-4 max-[500px]:px-[12px]">
                 <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  What type of projects should I make?
+                  Who is eligible?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  Your project should help someone in your fandom. It shouldn't
-                  be a basic website with a bunch of PNGs, but something
-                  interactive or useful.
-                  <br />
-                  <br />
-                  Examples:
-                  <br />
-                  <ul>
-                    <li>
-                      - Trivia game about your fandom (ex.{" "}
-                      <a
-                        className="underline decoration-dotted"
-                        href="https://gearoid.me/pokemon/"
-                      >
-                        Who's That Pokemon?
-                      </a>
-                      )
-                    </li>
-                    <li>
-                      - Interactive maps/trees (ex.{" "}
-                      <a
-                        className="underline decoration-dotted"
-                        href="https://github.com/lukephelan/web-of-westeros"
-                      >
-                        Game of Thrones family tree
-                      </a>
-                      )
-                    </li>
-                    <li>
-                      - Star Wars api (ex.{" "}
-                      <a
-                        className="underline decoration-dotted"
-                        href="https://swapi.dev/"
-                      >
-                        swapi.dev
-                      </a>
-                      )
-                    </li>
-                  </ul>
-                  (This isn't a definitive list, just examples! Go wild with
-                  what you build, and be creative!)
-                  <br />
-                  <br />
-                  Avoid:
-                  <ul>
-                    <li>- Simple static sites</li>
-                    <li>
-                      - Wikis or forums, those are everywhere and likely already
-                      exist for your fandom
-                    </li>
-                  </ul>
+                  Student ages 13-18 who do not already own a personal computer
+                  are eligible to participate. For example, students who can
+                  only access a computer at school or at a public library, which
+                  makes it more difficult for them to code for long periods of
+                  time.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="q1" className="px-4 max-[500px]:px-[12px]">
                 <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  What counts as “finished”?
+                  What do I need to submit?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  A working build + public repo + README with setup and usage +
-                  live demo link. Interactive projects should be tryable without
-                  digging.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="q3" className="px-4 max-[500px]:px-[12px]">
-                <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  Can I use AI tools?
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  Yes, but avoid heavy reliance on it. Not AI only. Keep
-                  meaningful personal work and attribute any generated assets
-                  when relevant. Less than 30 percent of your project should be
-                  AI.
+                  You will need to submit a link to a working build of your project and its public GitHub repository. The repository needs a {" "}
+                  <a
+                  href="https://www.makeareadme.com/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                    REAME file
+                  </a> {" "}
+                  briefly explaining what your project is and how to use it.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="q5" className="px-4 max-[500px]:px-[12px]">
                 <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  Are there content restrictions?
+                  What skill level do I need to participate?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  Keep it respectful and within Hack Club's COC. Attribute third
-                  party assets or code.
+                  You can have any level of skill to participate! This is open to beginners, in fact, we encourage beginners to participate! The goal is to make coding accessible to everyone, regardless of their current skill level.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="q6" className="px-4 max-[500px]:px-[12px]">
                 <AccordionTrigger className="text-left max-[500px]:text-[18px] max-[500px]:py-[14px]">
-                  Do I have to use Hackatime?
+                  Is participation free?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 space-y-2 max-[500px]:text-[16px]">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Yes, it is crucial you use hackatime.</li>
-                  </ul>
+                  Yes, participation is completely free!
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </section>
         </div>
         {/* HC on top */}
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: "50px",
-            width: "50vw",
-            height: "50vh",
-            zIndex: 10,
-            pointerEvents: "none",
-          }}
-          className="flex flex-col items-center justify-center text-center px-4"
+      </div>
+
+      <div className="fixed top-0 left-0 w-full z-10 flex items-start justify-between px-6 pointer-events-none">
+        <a
+          href="https://hackclub.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pointer-events-auto"
         >
-          <a
-            href="https://hackclub.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-0 left-2"
-          >
-            <img
-              src="https://assets.hackclub.com/flag-orpheus-top.svg"
-              alt="Hack Club"
-              style={{ pointerEvents: "auto" }}
-              className="computer-hover w-48"
-            />
-          </a>
-        </div>
+          <img
+            src="https://assets.hackclub.com/flag-orpheus-top.svg"
+            alt="Hack Club"
+            className="computer-hover w-[200px]"
+          />
+        </a>
+
+        <a
+          href="https://submit.hackclub.com/ignite"
+          className="pointer-events-auto px-4 mt-4 rounded-lg bg-blue-900/30 text-white text-lg border border-white/50 hover:bg-white/20 transition"
+        >
+          Submit
+        </a>
       </div>
     </>
   );

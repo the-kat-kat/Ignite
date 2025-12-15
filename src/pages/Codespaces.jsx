@@ -246,14 +246,14 @@ export default function App() {
               </div>
             </div>
 
-            <div className="justify-center  border border-white/10 p-5 w-full text-center rounded-xl">
+            <div className="justify-center flex flex-col  border border-white/10 p-5 w-full text-center rounded-xl">
               <p className="text-sm md:text-base mb-4">
                 You should be all set up now! You can start coding and, after a
                 few minutes, check Hackatime to see if it has tracked the time
                 for your project.
               </p>
                <img
-                    className="w-[200px] md:w-[500px] md:h-[300px] object-cover overflow-hidden self-center rounded-md"
+                    className="w-[200px] md:w-[600px] md:h-[300px] object-cover overflow-hidden self-center rounded-md"
                     src="./track_time.png"
                     alt="wakatime_key"
                   />

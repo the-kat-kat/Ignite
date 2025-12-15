@@ -166,7 +166,12 @@ export default function App() {
               Code for 10 hours, earn your own personal computer!
             </h1>
             <div className="mt-8 w-3/4">
-              <EmailButton />
+              <a
+                href="https://hackclub.enterprise.slack.com/archives/C09SGKRQGA0"
+                className="pointer-events-auto p-4 mt-4 rounded-lg bg-blue-900/30 text-white text-lg border border-white/50 hover:bg-white/20 transition"
+              >
+                Interested? Join the Slack
+              </a>
             </div>
           </div>
 
@@ -269,18 +274,17 @@ export default function App() {
 
                 <div className="bg-white/30 border border-white/10 p-5 max-w-lg w-full text-center rounded-xl mx-auto">
                   <p className="text-sm md:text-base">
-                    3. After 10 hours, {" "}
+                    3. After 10 hours,{" "}
                     <a
-                  href="https://submit.hackclub.com/ignite"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
-                >
-                  submit
-                </a>
-                {" "}
-                     your project! We'll review it and
-                    then ship you a personal computer!
+                      href="https://submit.hackclub.com/ignite"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lightGreen underline decoration-dotted underline-offset-4 hover:text-white/80 transition"
+                    >
+                      submit
+                    </a>{" "}
+                    your project! We'll review it and then ship you a personal
+                    computer!
                   </p>
                 </div>
               </div>
@@ -334,13 +338,16 @@ export default function App() {
                   What do I need to submit?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  You will need to submit a link to a working build of your project and its public GitHub repository. The repository needs a {" "}
+                  You will need to submit a link to a working build of your
+                  project and its public GitHub repository. The repository needs
+                  a{" "}
                   <a
-                  href="https://www.makeareadme.com/"
-                  target="_blank"
-                  rel="noopener noreferrer">
+                    href="https://www.makeareadme.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     REAME file
-                  </a> {" "}
+                  </a>{" "}
                   briefly explaining what your project is and how to use it.
                 </AccordionContent>
               </AccordionItem>
@@ -350,7 +357,10 @@ export default function App() {
                   What skill level do I need to participate?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-200/90 max-[500px]:text-[16px]">
-                  You can have any level of skill to participate! This is open to beginners, in fact, we encourage beginners to participate! The goal is to make coding accessible to everyone, regardless of their current skill level.
+                  You can have any level of skill to participate! This is open
+                  to beginners, in fact, we encourage beginners to participate!
+                  The goal is to make coding accessible to everyone, regardless
+                  of their current skill level.
                 </AccordionContent>
               </AccordionItem>
 
@@ -384,7 +394,7 @@ export default function App() {
 
         <a
           href="https://submit.hackclub.com/ignite"
-          className="pointer-events-auto px-4 mt-4 rounded-lg bg-blue-900/30 text-white text-lg border border-white/50 hover:bg-white/20 transition"
+          className="pointer-events-auto p-2 mt-4 rounded-lg bg-blue-900/30 text-white text-3xl border border-white/50 hover:bg-white/20 transition"
         >
           Submit
         </a>

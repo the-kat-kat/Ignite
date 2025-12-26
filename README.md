@@ -15,7 +15,7 @@ Click on "guide" under "Let's get started to see the guide page!"
 
 <img width="1449" height="710" alt="Screenshot 2025-12-24 at 11 55 02 AM" src="https://github.com/user-attachments/assets/295b085d-b002-4355-b7c7-ea61c70060ca" />
 
-
-
+Credits:
+- I used fanpage (https://github.com/hackclub/fanpage/tree/main) and hackapet (https://github.com/hackclub/hackapet/tree/main/site) to learn the basic structure for the FAQ Accordion and an email API script that I'm no longer using (note to midnight reviewers: I forgot to delete that file when I submitted)
 
 
